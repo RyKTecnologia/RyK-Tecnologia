@@ -1,10 +1,40 @@
+/* ================= THEME ================= */
+:root {
+  --bg: #0b0a12; /* base oscura violeta */
+  --surface: #12101c; /* paneles */
+  --card: rgba(255, 255, 255, 0.06);
+  --border: rgba(255, 255, 255, 0.08);
+
+  --text: #f6f7ff;
+  --muted: #c9c6d8;
+
+  --primary: #6a5cff; /* morado principal */
+  --primary-2: #b96bff; /* degradado */
+  --primary-hover: #5247d9;
+  --glow: 0 0 20px rgba(106, 92, 255, 0.35);
+
+  --accent: #e94bb4; /* acento magenta sutil */
+  --success: #25d366; /* WhatsApp */
+  --success-hover: #1da851;
+}
+
 /* BASE */
 body {
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
-  background: #000;
-  color: #fff;
+  background: radial-gradient(
+      80% 60% at 15% 25%,
+      rgba(185, 107, 255, 0.1),
+      transparent 60%
+    ),
+    radial-gradient(
+      70% 55% at 85% 70%,
+      rgba(106, 92, 255, 0.12),
+      transparent 60%
+    ),
+    var(--bg);
+  color: var(--text);
   overflow: hidden;
 }
 
@@ -15,12 +45,14 @@ body {
   left: 0;
   width: 100%;
   height: 80px;
-  background: rgba(34, 34, 34, 0.9);
+  background: rgba(18, 16, 28, 0.9);
+  backdrop-filter: blur(6px);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0;
   z-index: 1000;
+  border-bottom: 1px solid var(--border);
 }
 
 /* === Logo y slogan === */
@@ -35,20 +67,21 @@ body {
 .brand .logo {
   width: 52px;
   height: auto;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.4));
 }
 .brand-text h1 {
   margin: 0;
   font-size: 22px;
   font-weight: 700;
-  color: #fff;
+  color: var(--text);
 }
 .brand-text h1 span {
-  color: #357dfd;
+  color: var(--primary);
 }
 .brand-text .slogan {
   margin: 0;
   font-size: 14px;
-  color: #ccc;
+  color: var(--muted);
   font-style: italic;
 }
 
@@ -66,14 +99,14 @@ body {
 }
 #main-nav a {
   position: relative;
-  color: #fff;
+  color: var(--text);
   text-decoration: none;
   font-weight: 600;
   padding: 5px 0;
   transition: color 0.3s;
 }
 #main-nav a:hover {
-  color: #357dfd;
+  color: var(--primary);
 }
 #main-nav a::after {
   content: "";
@@ -82,7 +115,7 @@ body {
   bottom: -4px;
   width: 0;
   height: 2px;
-  background: #357dfd;
+  background: linear-gradient(90deg, var(--primary), var(--primary-2));
   transition: all 0.4s ease;
   transform: translateX(-50%);
 }
@@ -99,12 +132,10 @@ body {
   transform: translateY(30px);
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
-
 .container.loaded {
   opacity: 1;
   transform: translateY(0);
 }
-
 .slide {
   height: 100vh;
   width: 100%;
@@ -112,7 +143,7 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 0px;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -130,11 +161,12 @@ body {
 #hero::after {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.55);
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(11, 10, 18, 0.55),
+    rgba(11, 10, 18, 0.75)
+  );
 }
 .hero-content {
   position: relative;
@@ -150,7 +182,7 @@ body {
 .hero-content p {
   font-size: 1.2rem;
   margin-bottom: 30px;
-  color: #ddd;
+  color: var(--muted);
   text-align: left;
 }
 .hero-buttons {
@@ -160,31 +192,34 @@ body {
 .btn-primary,
 .btn-secondary {
   padding: 12px 24px;
-  border-radius: 5px;
-  font-weight: 600;
+  border-radius: 10px;
+  font-weight: 700;
   text-decoration: none;
   transition: all 0.3s ease;
+  border: 1px solid transparent;
 }
 .btn-primary {
-  background: #357dfd;
+  background: linear-gradient(135deg, var(--primary), var(--primary-2));
   color: #fff;
+  box-shadow: var(--glow);
 }
 .btn-primary:hover {
-  background: #2556b3;
+  background: var(--primary-hover);
   transform: translateY(-3px);
 }
 .btn-secondary {
-  background: #25d366;
-  color: #fff;
+  background: var(--success);
+  color: #0a0a0a;
+  font-weight: 800;
 }
 .btn-secondary:hover {
-  background: #1da851;
+  background: var(--success-hover);
   transform: translateY(-3px);
 }
 
 /* ================= TELÉFONOS ================= */
 #telefonos {
-  background: #111;
+  background: var(--surface);
   position: relative;
   overflow: hidden;
 }
@@ -199,12 +234,11 @@ body {
 
 .telefono-banner {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background: linear-gradient(
-    to bottom right,
-    rgba(0, 0, 0, 0.6),
-    rgba(0, 0, 0, 0.2)
+    135deg,
+    rgba(106, 92, 255, 0.2),
+    rgba(233, 75, 180, 0.12)
   );
   display: flex;
   justify-content: center;
@@ -218,23 +252,22 @@ body {
   width: 35%;
   padding-left: 5%;
 }
-
 .info-box h2 {
   font-size: 2.2rem;
   margin-bottom: 15px;
+  color: #fff;
 }
-
 .info-box p {
   font-size: 1.1rem;
   margin-bottom: 20px;
-  color: #ccc;
+  color: var(--muted);
 }
 
 .video-box video {
   width: 100%;
   max-width: 400px;
-  border-radius: 10px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5), var(--glow);
 }
 
 /* Botón "¡Lo quiero!" */
@@ -244,16 +277,16 @@ body {
   justify-content: center;
 }
 .btn-wp {
-  background: #25d366;
+  background: var(--success);
   color: #fff;
   padding: 12px 20px;
-  border-radius: 10px;
-  font-weight: 700;
+  border-radius: 12px;
+  font-weight: 800;
   text-decoration: none;
   transition: background 0.3s ease;
 }
 .btn-wp:hover {
-  background: #1da851;
+  background: var(--success-hover);
 }
 
 /* ========== MENÚ VERTICAL (CARRUSEL) ========== */
@@ -272,14 +305,14 @@ body {
 
 /* Flechas */
 .device-nav {
-  height: 40px; /* espacio reservado fijo */
+  height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .device-nav button {
-  background: rgba(34, 34, 34, 0.85);
-  border: none;
+  background: rgba(18, 16, 28, 0.85);
+  border: 1px solid var(--border);
   color: #fff;
   font-size: 18px;
   width: 40px;
@@ -291,14 +324,12 @@ body {
   pointer-events: auto;
 }
 .device-nav button:hover {
-  background: #357dfd;
-  box-shadow: 0 0 10px #357dfd;
+  background: var(--primary);
+  box-shadow: var(--glow);
 }
-
-/* 👇 clase que sustituye al display:none */
 .device-nav button.hidden {
   opacity: 0;
-  pointer-events: none; /* no clickeable */
+  pointer-events: none;
 }
 
 /* Ventana visible del carrusel */
@@ -317,32 +348,32 @@ body {
 .device-item {
   width: 220px;
   height: 80px;
-  background: rgba(34, 34, 34, 0.85);
+  background: rgba(18, 16, 28, 0.85);
+  border: 1px solid var(--border);
   border-radius: 20px 0 20px 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 1rem;
   color: #fff;
   cursor: pointer;
   transition: all 0.3s ease, opacity 0.3s ease;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
-  opacity: 0.4;
+  opacity: 0.45;
   flex-shrink: 0;
 }
 .device-item.active {
-  background: linear-gradient(135deg, #357dfd, #1e90ff);
+  background: linear-gradient(135deg, var(--primary), var(--primary-2));
   color: #fff;
   transform: scale(1.1) translateX(-18px);
-  box-shadow: 0 0 25px #357dfd;
+  box-shadow: 0 0 25px rgba(106, 92, 255, 0.6);
   opacity: 1;
-  transition: all 0.3s ease;
 }
 .device-item:hover {
-  background: rgba(53, 125, 253, 0.95);
+  background: rgba(106, 92, 255, 0.95);
   transform: scale(1.08) translateX(-15px);
-  box-shadow: 0 0 20px #357dfd;
+  box-shadow: var(--glow);
   opacity: 1;
   z-index: 10;
 }
@@ -357,15 +388,15 @@ body {
   inset: 0;
   background: radial-gradient(
       80% 60% at 20% 30%,
-      rgba(53, 125, 253, 0.35),
+      rgba(106, 92, 255, 0.25),
       transparent 60%
     ),
     radial-gradient(
       60% 50% at 80% 70%,
-      rgba(37, 211, 102, 0.25),
+      rgba(233, 75, 180, 0.18),
       transparent 60%
     ),
-    #0b0b0b;
+    var(--surface);
   z-index: 1;
 }
 #contacto .contacto-wrap {
@@ -384,9 +415,9 @@ body {
   border-radius: 16px;
 }
 #contacto .contacto-right {
-  background: rgba(34, 34, 34, 0.55);
+  background: rgba(18, 16, 28, 0.55);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border);
   border-radius: 18px;
   padding: 28px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
@@ -401,7 +432,7 @@ body {
 }
 #contacto .contacto-right .contacto-copy {
   margin: 0 0 18px 0;
-  color: #ccc;
+  color: var(--muted);
 }
 #contacto .contacto-actions {
   display: flex;
@@ -416,28 +447,29 @@ body {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  font-weight: 700;
+  font-weight: 800;
   text-decoration: none;
   border-radius: 12px;
   padding: 14px 22px;
   transition: transform 0.2s ease, background 0.2s ease;
   font-size: 1.05rem;
+  border: 1px solid transparent;
 }
 #contacto .btn-wp-xl {
-  background: #25d366;
+  background: var(--success);
   color: #0a0a0a;
-  font-weight: 800;
 }
 #contacto .btn-wp-xl:hover {
-  background: #1da851;
+  background: var(--success-hover);
   transform: translateY(-2px);
 }
 #contacto .btn-mail {
-  background: #357dfd;
+  background: linear-gradient(135deg, var(--primary), var(--primary-2));
   color: #fff;
+  box-shadow: var(--glow);
 }
 #contacto .btn-mail:hover {
-  background: #2556b3;
+  background: var(--primary-hover);
   transform: translateY(-2px);
 }
 #contacto .contacto-social {
@@ -453,8 +485,8 @@ body {
   align-items: center;
   justify-content: center;
   color: #fff;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: var(--card);
+  border: 1px solid var(--border);
   border-radius: 10px;
   text-decoration: none;
   transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
@@ -490,14 +522,15 @@ body {
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.35);
   cursor: pointer;
   transition: all 0.3s ease;
+  border: 1px solid var(--border);
 }
 .nav-dots .dot.active {
-  background: #357dfd;
+  background: linear-gradient(135deg, var(--primary), var(--primary-2));
   transform: scale(1.2);
-  box-shadow: 0 0 6px #357dfd;
+  box-shadow: var(--glow);
 }
 
 /* ================= ANIMACIONES ================= */
@@ -524,7 +557,17 @@ body {
 
 /* ================= DESTACADOS ================= */
 #destacados {
-  background: #111;
+  background: var(--surface);
+  background-image: radial-gradient(
+      60% 50% at 10% 15%,
+      rgba(233, 75, 180, 0.1),
+      transparent 60%
+    ),
+    radial-gradient(
+      60% 50% at 90% 85%,
+      rgba(106, 92, 255, 0.12),
+      transparent 60%
+    );
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -533,14 +576,12 @@ body {
   min-height: 100vh;
   box-sizing: border-box;
 }
-
 #destacados h2 {
   font-size: 2.4rem;
   margin-bottom: 20px;
   color: #fff;
 }
 
-/* Menú centrado */
 .menu-scroll {
   display: flex;
   justify-content: center;
@@ -554,21 +595,21 @@ body {
 .menu-scroll::-webkit-scrollbar {
   display: none;
 }
-
 .menu-item {
-  background: rgba(34, 34, 34, 0.85);
-  border: none;
+  background: rgba(18, 16, 28, 0.85);
+  border: 1px solid var(--border);
   padding: 10px 20px;
   border-radius: 20px;
-  font-weight: 600;
+  font-weight: 700;
   color: #fff;
   cursor: pointer;
   white-space: nowrap;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 .menu-item.active,
 .menu-item:hover {
-  background: #357dfd;
+  background: linear-gradient(135deg, var(--primary), var(--primary-2));
+  box-shadow: var(--glow);
 }
 
 /* Carrusel */
@@ -580,10 +621,9 @@ body {
   align-items: stretch;
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
-
 .grid-destacados {
   display: grid;
-  grid-template-columns: 3fr 1fr; /* más ancho para el grande */
+  grid-template-columns: 3fr 1fr;
   gap: 10px;
   width: 100%;
   height: 100%;
@@ -591,7 +631,8 @@ body {
 
 /* Producto grande */
 .destacado-grande {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--card);
+  border: 1px solid var(--border);
   border-radius: 12px;
   padding: 20px;
   display: flex;
@@ -613,7 +654,7 @@ body {
   color: #fff;
 }
 .destacado-grande p {
-  color: #ccc;
+  color: var(--muted);
   margin-bottom: 10px;
 }
 .destacado-grande .precio-ref {
@@ -623,7 +664,7 @@ body {
 }
 .destacado-grande:hover {
   transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4), var(--glow);
 }
 
 /* Productos pequeños */
@@ -634,7 +675,8 @@ body {
   gap: 10px;
 }
 .destacado-item {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--card);
+  border: 1px solid var(--border);
   border-radius: 12px;
   padding: 15px;
   display: flex;
@@ -662,9 +704,13 @@ body {
   margin-bottom: 10px;
 }
 .destacado-item:hover {
-  background: rgba(53, 125, 253, 0.25);
+  background: linear-gradient(
+    135deg,
+    rgba(106, 92, 255, 0.22),
+    rgba(233, 75, 180, 0.18)
+  );
   transform: translateY(-5px) scale(1.03);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3), var(--glow);
 }
 
 /* Botones dentro de destacados */
@@ -672,26 +718,25 @@ body {
 .destacado-item .btn-secondary {
   padding: 8px 16px;
   border-radius: 20px;
-  font-weight: 600;
+  font-weight: 700;
   text-decoration: none;
   transition: all 0.3s ease;
 }
-
 .destacado-grande .btn-primary {
-  background: #357dfd;
+  background: linear-gradient(135deg, var(--primary), var(--primary-2));
   color: #fff;
+  box-shadow: var(--glow);
 }
 .destacado-grande .btn-primary:hover {
-  background: #2556b3;
+  background: var(--primary-hover);
   transform: translateY(-3px);
 }
-
 .destacado-item .btn-secondary {
-  background: #25d366;
+  background: var(--success);
   color: #fff;
 }
 .destacado-item .btn-secondary:hover {
-  background: #1da851;
+  background: var(--success-hover);
   transform: translateY(-3px);
 }
 
