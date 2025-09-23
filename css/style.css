@@ -1,0 +1,708 @@
+/* BASE */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background: #000;
+  color: #fff;
+  overflow: hidden;
+}
+
+/* === Header === */
+#main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: rgba(34, 34, 34, 0.9);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  z-index: 1000;
+}
+
+/* === Logo y slogan === */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  padding-left: 10px;
+  text-align: left;
+}
+.brand .logo {
+  width: 52px;
+  height: auto;
+}
+.brand-text h1 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+}
+.brand-text h1 span {
+  color: #357dfd;
+}
+.brand-text .slogan {
+  margin: 0;
+  font-size: 14px;
+  color: #ccc;
+  font-style: italic;
+}
+
+#main-nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+#main-nav ul {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#main-nav a {
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 5px 0;
+  transition: color 0.3s;
+}
+#main-nav a:hover {
+  color: #357dfd;
+}
+#main-nav a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: #357dfd;
+  transition: all 0.4s ease;
+  transform: translateX(-50%);
+}
+#main-nav a:hover::after {
+  width: 100%;
+}
+.header-right {
+  flex: 1;
+}
+
+/* SLIDES */
+.container {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.container.loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.slide {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+/* HERO */
+#hero {
+  width: 100%;
+  height: 100%;
+  background: url("../img/banner1.png") center/cover no-repeat;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  padding: 0;
+}
+#hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+  margin-left: 10%;
+}
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-align: left;
+}
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #ddd;
+  text-align: left;
+}
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+}
+.btn-primary,
+.btn-secondary {
+  padding: 12px 24px;
+  border-radius: 5px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.btn-primary {
+  background: #357dfd;
+  color: #fff;
+}
+.btn-primary:hover {
+  background: #2556b3;
+  transform: translateY(-3px);
+}
+.btn-secondary {
+  background: #25d366;
+  color: #fff;
+}
+.btn-secondary:hover {
+  background: #1da851;
+  transform: translateY(-3px);
+}
+
+/* ================= TELÉFONOS ================= */
+#telefonos {
+  background: #111;
+  position: relative;
+  overflow: hidden;
+}
+.telefonos-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.telefono-banner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom right,
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0.2)
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Caja izquierda */
+.info-box {
+  position: relative;
+  z-index: 2;
+  width: 35%;
+  padding-left: 5%;
+}
+
+.info-box h2 {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+}
+
+.info-box p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  color: #ccc;
+}
+
+.video-box video {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Botón "¡Lo quiero!" */
+.acciones-telefono {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+.btn-wp {
+  background: #25d366;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+.btn-wp:hover {
+  background: #1da851;
+}
+
+/* ========== MENÚ VERTICAL (CARRUSEL) ========== */
+.device-menu {
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-35%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 5;
+  height: 80%;
+  padding: 0 10px;
+}
+
+/* Flechas */
+.device-nav {
+  height: 40px; /* espacio reservado fijo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.device-nav button {
+  background: rgba(34, 34, 34, 0.85);
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease, opacity 0.3s ease;
+  opacity: 1;
+  pointer-events: auto;
+}
+.device-nav button:hover {
+  background: #357dfd;
+  box-shadow: 0 0 10px #357dfd;
+}
+
+/* 👇 clase que sustituye al display:none */
+.device-nav button.hidden {
+  opacity: 0;
+  pointer-events: none; /* no clickeable */
+}
+
+/* Ventana visible del carrusel */
+.device-window {
+  overflow: hidden;
+  max-height: 405px;
+}
+
+/* Lista de tarjetas */
+.device-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: transform 0.4s ease;
+}
+.device-item {
+  width: 220px;
+  height: 80px;
+  background: rgba(34, 34, 34, 0.85);
+  border-radius: 20px 0 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease, opacity 0.3s ease;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+  opacity: 0.4;
+  flex-shrink: 0;
+}
+.device-item.active {
+  background: linear-gradient(135deg, #357dfd, #1e90ff);
+  color: #fff;
+  transform: scale(1.1) translateX(-18px);
+  box-shadow: 0 0 25px #357dfd;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+.device-item:hover {
+  background: rgba(53, 125, 253, 0.95);
+  transform: scale(1.08) translateX(-15px);
+  box-shadow: 0 0 20px #357dfd;
+  opacity: 1;
+  z-index: 10;
+}
+
+/* ================= CONTACTO ================= */
+#contacto {
+  position: relative;
+  overflow: hidden;
+}
+#contacto .contact-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+      80% 60% at 20% 30%,
+      rgba(53, 125, 253, 0.35),
+      transparent 60%
+    ),
+    radial-gradient(
+      60% 50% at 80% 70%,
+      rgba(37, 211, 102, 0.25),
+      transparent 60%
+    ),
+    #0b0b0b;
+  z-index: 1;
+}
+#contacto .contacto-wrap {
+  position: relative;
+  z-index: 2;
+  width: min(1100px, 92%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+#contacto .contacto-left img {
+  width: 100%;
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.6));
+  border-radius: 16px;
+}
+#contacto .contacto-right {
+  background: rgba(34, 34, 34, 0.55);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+#contacto .contacto-right h2 {
+  margin: 0 0 10px 0;
+  font-size: 2rem;
+  color: #fff;
+}
+#contacto .contacto-right .contacto-copy {
+  margin: 0 0 18px 0;
+  color: #ccc;
+}
+#contacto .contacto-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+#contacto .btn-wp-xl,
+#contacto .btn-mail {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 12px;
+  padding: 14px 22px;
+  transition: transform 0.2s ease, background 0.2s ease;
+  font-size: 1.05rem;
+}
+#contacto .btn-wp-xl {
+  background: #25d366;
+  color: #0a0a0a;
+  font-weight: 800;
+}
+#contacto .btn-wp-xl:hover {
+  background: #1da851;
+  transform: translateY(-2px);
+}
+#contacto .btn-mail {
+  background: #357dfd;
+  color: #fff;
+}
+#contacto .btn-mail:hover {
+  background: #2556b3;
+  transform: translateY(-2px);
+}
+#contacto .contacto-social {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+}
+#contacto .contacto-social .social {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+#contacto .contacto-social .social:hover {
+  background: rgba(255, 255, 255, 0.16);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+@media (max-width: 900px) {
+  #contacto .contacto-wrap {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  #contacto .contacto-left img {
+    max-width: 520px;
+    margin: 0 auto;
+  }
+}
+
+/* ================= DOTS ================= */
+.nav-dots {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 2000;
+}
+.nav-dots .dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.nav-dots .dot.active {
+  background: #357dfd;
+  transform: scale(1.2);
+  box-shadow: 0 0 6px #357dfd;
+}
+
+/* ================= ANIMACIONES ================= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= DESTACADOS ================= */
+#destacados {
+  background: #111;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 60px 20px;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+#destacados h2 {
+  font-size: 2.4rem;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+/* Menú centrado */
+.menu-scroll {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 10px 0;
+  margin-bottom: 30px;
+  scrollbar-width: none;
+  width: 100%;
+}
+.menu-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.menu-item {
+  background: rgba(34, 34, 34, 0.85);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.3s ease;
+}
+.menu-item.active,
+.menu-item:hover {
+  background: #357dfd;
+}
+
+/* Carrusel */
+.carrusel-destacados {
+  width: 100%;
+  max-width: 1300px;
+  flex: 1;
+  display: flex;
+  align-items: stretch;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.grid-destacados {
+  display: grid;
+  grid-template-columns: 3fr 1fr; /* más ancho para el grande */
+  gap: 10px;
+  width: 100%;
+  height: 100%;
+}
+
+/* Producto grande */
+.destacado-grande {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.destacado-grande img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+.destacado-grande h3 {
+  margin: 10px 0;
+  color: #fff;
+}
+.destacado-grande p {
+  color: #ccc;
+  margin-bottom: 10px;
+}
+.destacado-grande .precio-ref {
+  color: #4caf50;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+.destacado-grande:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
+}
+
+/* Productos pequeños */
+.destacados-laterales {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
+}
+.destacado-item {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+.destacado-item img {
+  width: 100%;
+  max-height: 150px;
+  object-fit: contain;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+.destacado-item h4 {
+  font-size: 1rem;
+  color: #fff;
+  margin-bottom: 5px;
+}
+.destacado-item .precio-ref {
+  color: #4caf50;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+.destacado-item:hover {
+  background: rgba(53, 125, 253, 0.25);
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+}
+
+/* Botones dentro de destacados */
+.destacado-grande .btn-primary,
+.destacado-item .btn-secondary {
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.destacado-grande .btn-primary {
+  background: #357dfd;
+  color: #fff;
+}
+.destacado-grande .btn-primary:hover {
+  background: #2556b3;
+  transform: translateY(-3px);
+}
+
+.destacado-item .btn-secondary {
+  background: #25d366;
+  color: #fff;
+}
+.destacado-item .btn-secondary:hover {
+  background: #1da851;
+  transform: translateY(-3px);
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .grid-destacados {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+  }
+  .destacados-laterales {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+  }
+}

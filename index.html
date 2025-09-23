@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RyK Tecnología</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header id="main-header">
+      <div class="brand">
+        <img src="img/logo1.png" alt="Logo RyK" class="logo" />
+        <div class="brand-text">
+          <h1>RyK <span>Tecnología</span></h1>
+          <p class="slogan">Tu tecnología a crédito fácil y rápido</p>
+        </div>
+      </div>
+      <nav id="main-nav">
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#destacados">Destacados</a></li>
+          <li><a href="#telefonos">Teléfonos</a></li>
+          <li><a href="#contacto">Contactanos</a></li>
+        </ul>
+      </nav>
+      <div class="header-right"></div>
+    </header>
+
+    <!-- Contenedor principal -->
+    <div class="container">
+      <!-- Inicio - Hero -->
+      <section class="slide" id="inicio">
+        <div id="hero">
+          <div class="hero-content">
+            <h1>Tu celular a crédito hoy mismo</h1>
+            <p>Sin trámites complicados. Aprobación rápida, pago en cuotas.</p>
+            <div class="hero-buttons">
+              <a
+                href="https://wa.me/573143471458"
+                target="_blank"
+                class="btn-secondary"
+                >Escríbenos</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- NUEVO SLIDE DESTACADOS -->
+      <section class="slide" id="destacados">
+        <div class="destacados-wrap">
+          <h2>Destacados</h2>
+
+          <!-- Menú horizontal -->
+          <div class="menu-scroll">
+            <button class="menu-item active" data-categoria="televisores">
+              Televisores
+            </button>
+            <button class="menu-item" data-categoria="laptops">
+              Computadoras Portátiles
+            </button>
+            <button class="menu-item" data-categoria="lavadoras">
+              Lavadoras
+            </button>
+            <button class="menu-item" data-categoria="motos">
+              Motos Eléctricas
+            </button>
+          </div>
+          <!-- Carrusel de productos -->
+          <div class="carrusel-destacados" id="carrusel-contenido">
+            <div class="grid-destacados">
+              <!-- Izquierda -->
+              <div class="destacado-grande">
+                <img src="img/ejemplo1.jpg" alt="Producto destacado grande" />
+                <h3>Producto Grande</h3>
+                <p>Descripción breve del producto destacado</p>
+              </div>
+              <!-- Derecha -->
+              <div class="destacados-laterales">
+                <div class="destacado-item">
+                  <img src="img/ejemplo2.jpg" alt="Producto pequeño" />
+                  <h4>Producto 1</h4>
+                </div>
+                <div class="destacado-item">
+                  <img src="img/ejemplo3.jpg" alt="Producto pequeño" />
+                  <h4>Producto 2</h4>
+                </div>
+                <div class="destacado-item">
+                  <img src="img/ejemplo4.jpg" alt="Producto pequeño" />
+                  <h4>Producto 3</h4>
+                </div>
+                <div class="destacado-item">
+                  <img src="img/ejemplo5.jpg" alt="Producto pequeño" />
+                  <h4>Producto 4</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Teléfonos -->
+      <section class="slide" id="telefonos">
+        <div class="telefonos-container">
+          <div class="info-box">
+            <h2 id="tel-nombre">Honor</h2>
+            <p id="tel-descripcion">
+              Descubre los últimos smartphones Honor con gran rendimiento y
+              estilo.
+            </p>
+            <div class="video-box" id="tel-video"></div>
+            <div class="acciones-telefono">
+              <a href="#" id="btn-whatsapp" class="btn-wp">¡Lo quiero!</a>
+            </div>
+          </div>
+          <div class="telefono-banner" id="tel-banner"></div>
+          <div class="device-menu">
+            <div class="device-nav top">
+              <button id="btn-up">▲</button>
+            </div>
+            <div class="device-window">
+              <ul id="tel-lista" class="device-list">
+                <li data-modelo="honor" class="device-item active">Honor</li>
+                <li data-modelo="infinixHot50" class="device-item">
+                  Infinix Hot 50 5G
+                </li>
+                <li data-modelo="infinixNote50" class="device-item">
+                  Infinix Note 50 Pro
+                </li>
+                <li data-modelo="iphone14pro" class="device-item">
+                  iPhone 14 Pro
+                </li>
+                <li data-modelo="motorolaG40" class="device-item">
+                  Motorola G40
+                </li>
+                <li data-modelo="oppo" class="device-item">Oppo</li>
+                <li data-modelo="samsungA16" class="device-item">
+                  Samsung A16
+                </li>
+                <li data-modelo="xiaomiNote14" class="device-item">
+                  Xiaomi Note 14 Pro
+                </li>
+                <li data-modelo="tecnoSpark" class="device-item">
+                  Tecno Spark Go2
+                </li>
+              </ul>
+            </div>
+            <div class="device-nav bottom">
+              <button id="btn-down">▼</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contacto -->
+      <section class="slide" id="contacto">
+        <div class="contact-bg"></div>
+        <div class="contacto-wrap">
+          <div class="contacto-left">
+            <img src="img/poco_telefono.png" alt="Smartphone destacado" />
+          </div>
+          <div class="contacto-right">
+            <h2>Conéctate con nosotros</h2>
+            <p class="contacto-copy">
+              Siempre listos para resolver tus dudas y ayudarte con tu crédito.
+            </p>
+            <div class="contacto-actions">
+              <a
+                class="btn-wp-xl"
+                href="https://wa.me/573143471458?text=Hola%2C%20quiero%20informaci%C3%B3n%20de%20cr%C3%A9dito"
+                target="_blank"
+                rel="noopener"
+              >
+                WhatsApp
+              </a>
+              <a
+                class="btn-mail"
+                href="mailto:ventas@ryk-tecnologia.com?subject=Solicitud%20de%20informaci%C3%B3n"
+              >
+                Correo
+              </a>
+            </div>
+            <div class="contacto-social">
+              <a
+                class="social"
+                href="https://facebook.com/"
+                target="_blank"
+                aria-label="Facebook"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a
+                class="social"
+                href="https://instagram.com/"
+                target="_blank"
+                aria-label="Instagram"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                class="social"
+                href="https://tiktok.com/"
+                target="_blank"
+                aria-label="TikTok"
+              >
+                <i class="fab fa-tiktok"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- INDICADORES (dots) -->
+    <div class="nav-dots">
+      <span class="dot active" data-slide="0"></span>
+      <span class="dot" data-slide="1"></span>
+      <span class="dot" data-slide="2"></span>
+      <span class="dot" data-slide="3"></span>
+    </div>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
