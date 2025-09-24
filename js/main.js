@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
       descripcion:
         "Descubre los últimos smartphones Honor con gran rendimiento y estilo.",
       video: "videos/honor.mp4",
-      banner: "img/banner_honor.png",
+      banner: "img/banner_honor.webp",
     },
     infinixHot50: {
       nombre: "Infinix Hot 50 5G",
@@ -179,122 +179,118 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* ================= DESTACADOS ================= */
   const categorias = {
-    televisores: {
-      grande: {
-        titulo: 'Samsung 65" LED 4K',
-        img: "img/samsung_65.png",
-        desc: "Smart TV 4K UHD",
-        precio: "COP $2.339.900",
-      },
-      items: [
-        {
-          titulo: 'Samsung 50" LED 4K',
-          img: "img/samsung_50.png",
-          precio: "COP $1.699.900",
-        },
-        {
-          titulo: 'Samsung Neo QLED 65"',
-          img: "img/neo_samsung.png",
-          precio: "COP $3.999.900",
-        },
-        {
-          titulo: 'Kalley 50" LED',
-          img: "img/kalley_50.png",
-          precio: "COP $1.199.900",
-        },
-        {
-          titulo: 'LG NanoCell 55"',
-          img: "img/nano_cell50.png",
-          precio: "COP $2.999.900",
-        },
-      ],
-    },
-    laptops: {
-      grande: {
-        titulo: "HP Laptop 15",
-        img: "img/laptop_hp15.png",
-        desc: "Intel i5 · 8 GB · 512 SSD",
-        precio: "COP $2.999.900",
-      },
-      items: [
-        {
-          titulo: "Lenovo V15",
-          img: "img/lenovo_v15.png",
-          precio: "COP $2.079.900",
-        },
-        {
-          titulo: "Asus Vivobook 14",
-          img: "img/asus_vivobook14.png",
-          precio: "COP $2.349.900",
-        },
-        {
-          titulo: "MacBook Air M1",
-          img: "img/macbook_air.png",
-          precio: "COP $6.300.000",
-        },
-        {
-          titulo: "Acer Swift 3",
-          img: "img/acer_swift3.png",
-          precio: "COP $3.900.000",
-        },
-      ],
-    },
     lavadoras: {
       grande: {
-        titulo: "LG 22 kg",
-        img: "img/lg_lavadora22.png",
-        desc: "Carga Frontal LG",
-        precio: "COP $6.661.700",
+        titulo: "Lavadora doble tina Kalley 10k",
+        img: "img/lavadora10k.webp",
+        desc: "Lavadora Kalley doble tina capacidad 10kg",
+        precio: "COP $...",
       },
       items: [
         {
-          titulo: "Kalley 14 kg",
-          img: "img/kalley_14kg.png",
-          precio: "COP $1.800.000",
+          titulo: "Lavadora doble tina Kalley 7k",
+          img: "img/lavadora7k.webp",
+          precio: "COP $...",
+        },
+      ],
+    },
+    televisores: {
+      grande: {
+        titulo: "Tv 60 pulgadas Kalley",
+        img: "img/tv60kalley.webp",
+        desc: "Smart TV Kalley 60'' UHD",
+        precio: "COP $...",
+      },
+      items: [
+        {
+          titulo: "Tv 43 pulgadas Kalley",
+          img: "img/tv43kalley.webp",
+          precio: "COP $...",
         },
         {
-          titulo: "Samsung Wash",
-          img: "img/samsung_lav.png",
-          precio: "COP $2.400.000",
+          titulo: "Tv 32 pulgadas Kalley",
+          img: "img/tv32kalley.webp",
+          precio: "COP $...",
         },
         {
-          titulo: "LG TurboWash",
-          img: "img/lg_turbo.png",
-          precio: "COP $4.200.000",
+          titulo: "Tv 40 pulgadas Samsung",
+          img: "img/tv40samsung.webp",
+          precio: "COP $...",
         },
         {
-          titulo: "Kalley Básica",
-          img: "img/kalley_basic.png",
-          precio: "COP $1.300.000",
+          titulo: "Tv 43 pulgadas Samsung",
+          img: "img/tv43samsung.webp",
+          precio: "COP $...",
+        },
+      ],
+    },
+    parlantes: {
+      grande: {
+        titulo: "Parlante Samsung MX50",
+        img: "img/parlante_mx50.webp",
+        desc: "Audio potente Samsung MX50",
+        precio: "COP $...",
+      },
+      items: [
+        {
+          titulo: "Parlante 5PK 300D",
+          img: "img/parlante_300d.webp",
+          precio: "COP $...",
+        },
+        {
+          titulo: "Parlante Niatec Cubit (4 unidades)",
+          img: "img/niatec_cubit.webp",
+          precio: "COP $...",
+        },
+        {
+          titulo: "Parlante Niatec NT-PB16 (3 unidades)",
+          img: "img/niatec_ntpb16.webp",
+          precio: "COP $...",
+        },
+      ],
+    },
+    freidoras: {
+      grande: {
+        titulo: "Freidora Kalley 6.3L",
+        img: "img/freidora63.webp",
+        desc: "Freidora de aire Kalley 6.3 litros",
+        precio: "COP $...",
+      },
+      items: [
+        {
+          titulo: "Freidora Kalley 4.5L",
+          img: "img/freidora45.webp",
+          precio: "COP $...",
         },
       ],
     },
     motos: {
+      // esta se conserva igual
       grande: {
         titulo: "Mobuloo Girl 3",
-        img: "img/moto_girl3_gris.png",
+        img: "img/moto_girl3.webp",
         desc: "Autonomía entre 40 y 50 km · Velocidad 25–35 km/h · Motor 350W · Carga máxima 130kg",
         precio: "COP $4.200.000",
       },
       items: [
         {
           titulo: "Mobuloo Girl 3 - Blanca",
-          img: "img/moto_girl3_blanca.png",
+          img: "img/moto_girl3_blanca.webp",
           precio: "COP $4.200.000",
         },
         {
           titulo: "Mobuloo Girl 3 - Negra",
-          img: "img/moto_girl3_negra.png",
+          img: "img/moto_girl3_negra.webp",
           precio: "COP $4.200.000",
         },
         {
           titulo: "Mobuloo Girl 3 - Verde",
-          img: "img/moto_girl3_verde.png",
+          img: "img/moto_girl3_verde.webp",
           precio: "COP $4.200.000",
         },
         {
           titulo: "Mobuloo Girl 3 - Rosa",
-          img: "img/moto_girl3_rosa.png",
+          img: "img/moto_girl3_rosa.webp",
           precio: "COP $4.200.000",
         },
       ],

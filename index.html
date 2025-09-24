@@ -8,6 +8,7 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
       rel="stylesheet"
     />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -18,7 +19,7 @@
     <!-- Header -->
     <header id="main-header">
       <div class="brand">
-        <img src="img/logo1.png" alt="Logo RyK" class="logo" />
+        <img src="img/logo1.webp" alt="Logo RyK" class="logo" />
         <div class="brand-text">
           <h1>RyK <span>Tecnología</span></h1>
           <p class="slogan">Tu tecnología a crédito fácil y rápido</p>
@@ -62,49 +63,25 @@
 
           <!-- Menú horizontal -->
           <div class="menu-scroll">
-            <button class="menu-item active" data-categoria="televisores">
+            <button class="menu-item active" data-categoria="lavadoras">
+              Lavadoras
+            </button>
+            <button class="menu-item" data-categoria="televisores">
               Televisores
             </button>
-            <button class="menu-item" data-categoria="laptops">
-              Computadoras Portátiles
+            <button class="menu-item" data-categoria="parlantes">
+              Parlantes
             </button>
-            <button class="menu-item" data-categoria="lavadoras">
-              Lavadoras
+            <button class="menu-item" data-categoria="freidoras">
+              Freidoras
             </button>
             <button class="menu-item" data-categoria="motos">
               Motos Eléctricas
             </button>
           </div>
-          <!-- Carrusel de productos -->
-          <div class="carrusel-destacados" id="carrusel-contenido">
-            <div class="grid-destacados">
-              <!-- Izquierda -->
-              <div class="destacado-grande">
-                <img src="img/ejemplo1.jpg" alt="Producto destacado grande" />
-                <h3>Producto Grande</h3>
-                <p>Descripción breve del producto destacado</p>
-              </div>
-              <!-- Derecha -->
-              <div class="destacados-laterales">
-                <div class="destacado-item">
-                  <img src="img/ejemplo2.jpg" alt="Producto pequeño" />
-                  <h4>Producto 1</h4>
-                </div>
-                <div class="destacado-item">
-                  <img src="img/ejemplo3.jpg" alt="Producto pequeño" />
-                  <h4>Producto 2</h4>
-                </div>
-                <div class="destacado-item">
-                  <img src="img/ejemplo4.jpg" alt="Producto pequeño" />
-                  <h4>Producto 3</h4>
-                </div>
-                <div class="destacado-item">
-                  <img src="img/ejemplo5.jpg" alt="Producto pequeño" />
-                  <h4>Producto 4</h4>
-                </div>
-              </div>
-            </div>
-          </div>
+
+          <!-- Carrusel de productos (se llena con JS) -->
+          <div class="carrusel-destacados" id="carrusel-contenido"></div>
         </div>
       </section>
 
@@ -166,7 +143,7 @@
         <div class="contact-bg"></div>
         <div class="contacto-wrap">
           <div class="contacto-left">
-            <img src="img/poco_telefono.png" alt="Smartphone destacado" />
+            <img src="img/poco_telefono.webp" alt="Smartphone destacado" />
           </div>
           <div class="contacto-right">
             <h2>Conéctate con nosotros</h2>
