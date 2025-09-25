@@ -390,4 +390,20 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   updateSlide(0);
   updatePhone(currentIndex);
+
+  const menuToggle = document.getElementById("menu-toggle");
+  const mainNav = document.getElementById("main-nav");
+
+  menuToggle.addEventListener("click", () => {
+    mainNav.classList.toggle("open");
+    menuToggle.classList.toggle("active"); // <- aquí se activa la animación ☰ ↔ ✖
+  });
+  // Cerrar menú al hacer clic en cualquier enlace
+  const menuLinks = document.querySelectorAll("#main-nav a");
+  menuLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      mainNav.classList.remove("open");
+      menuToggle.classList.remove("active"); // vuelve el icono a ☰
+    });
+  });
 });

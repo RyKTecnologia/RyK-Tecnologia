@@ -19,6 +19,7 @@
 }
 
 /* BASE */
+html,
 body {
   margin: 0;
   padding: 0;
@@ -35,7 +36,9 @@ body {
     ),
     var(--bg);
   color: var(--text);
-  overflow: hidden;
+  overflow-x: hidden; /* solo evitamos desbordes horizontales */
+  overflow-y: auto; /* permitimos scroll normal */
+  height: 100%; /* importante en móviles */
 }
 
 /* === Header === */
@@ -215,6 +218,192 @@ body {
 .btn-secondary:hover {
   background: var(--success-hover);
   transform: translateY(-3px);
+}
+/* ================= MENÚ HAMBURGUESA + HEADER MÓVIL ================= */
+/* Ocultar hamburguesa en escritorio */
+.menu-toggle {
+  display: none;
+}
+
+/* Móvil */
+@media (max-width: 768px) {
+  /* Header en 3 columnas: [hamburguesa][marca centrada][espaciador] */
+  #main-header {
+    display: grid;
+    grid-template-columns: 48px 1fr 48px;
+    height: 72px;
+    padding: 0 8px;
+  }
+
+  /* Botón hamburguesa con forma y animación (☰ → ✖) */
+  .menu-toggle {
+    grid-column: 1;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.25s ease, transform 0.2s ease;
+  }
+  .menu-toggle:hover {
+    background: rgba(255, 255, 255, 0.18);
+    transform: scale(1.05);
+  }
+  .menu-toggle i {
+    display: none;
+  } /* evitamos el ícono cuadrado */
+  /* 3 líneas del ícono */
+  .menu-toggle::before,
+  .menu-toggle::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: 18px;
+    height: 2px;
+    background: var(--text);
+    transform: translateX(-50%);
+    transition: transform 0.25s ease, opacity 0.2s ease, top 0.25s ease;
+  }
+  .menu-toggle::before {
+    top: 14px;
+    box-shadow: 0 6px 0 var(--text);
+  } /* arriba + centro */
+  .menu-toggle::after {
+    top: 26px;
+  } /* abajo */
+  /* Estado activo → X */
+  .menu-toggle.active::before {
+    top: 50%;
+    box-shadow: none;
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  .menu-toggle.active::after {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+
+  /* Marca centrada */
+  .brand {
+    grid-column: 2;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    text-align: center;
+  }
+  .brand .logo {
+    width: 40px;
+    height: auto;
+  }
+  .brand-text h1 {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.1;
+  }
+  .brand-text .slogan {
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.2;
+    color: var(--muted);
+  }
+
+  /* Espaciador derecho para mantener la marca centrada */
+  .header-right {
+    grid-column: 3;
+    display: block;
+  }
+
+  /* Menú desplegable centrado */
+  #main-nav {
+    position: fixed;
+    top: 72px;
+    left: 0;
+    width: 100%;
+    background: rgba(18, 16, 28, 0.95);
+    max-height: 0;
+    opacity: 0;
+    pointer-events: none;
+    overflow: hidden;
+    flex-direction: column;
+    align-items: center;
+    transition: max-height 0.35s ease, opacity 0.25s ease;
+    z-index: 1000;
+  }
+  #main-nav.open {
+    max-height: 320px;
+    padding: 14px 0;
+    opacity: 1;
+    pointer-events: auto;
+  }
+  #main-nav ul {
+    flex-direction: column;
+    gap: 18px;
+    width: 100%;
+    align-items: center;
+    margin: 0;
+  }
+  #main-nav li {
+    width: 100%;
+  }
+  #main-nav a {
+    display: block;
+    width: 100%;
+    padding: 12px 0;
+    font-size: 1.08rem;
+  }
+  /* quita subrayado animado en móvil */
+  #main-nav a::after {
+    display: none;
+  }
+}
+
+/* ================= HERO RESPONSIVE ================= */
+@media (max-width: 768px) {
+  #hero {
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+  }
+  .hero-content {
+    margin: 0;
+    max-width: 90%;
+  }
+  .hero-content h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+  .hero-content p {
+    font-size: 1rem;
+    text-align: center;
+  }
+  .hero-buttons {
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .btn-secondary,
+  .btn-primary {
+    padding: 10px 18px;
+    font-size: 0.95rem;
+  }
+}
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 1.6rem;
+  }
+  .hero-content p {
+    font-size: 0.9rem;
+  }
+  .btn-secondary,
+  .btn-primary {
+    width: 100%;
+    text-align: center;
+  }
 }
 
 /* ================= TELÉFONOS ================= */
@@ -739,8 +928,196 @@ body {
   background: var(--success-hover);
   transform: translateY(-3px);
 }
+/* ================== RESPONSIVE ================== */
 
-/* Responsivo */
+/* ====== HEADER / MENÚ HAMBURGUESA ====== */
+@media (max-width: 768px) {
+  #main-header {
+    display: grid;
+    grid-template-columns: 48px 1fr 48px;
+    height: 72px;
+    padding: 0 8px;
+  }
+
+  .menu-toggle {
+    grid-column: 1;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.25s ease, transform 0.2s ease;
+  }
+  .menu-toggle:hover {
+    background: rgba(255, 255, 255, 0.18);
+    transform: scale(1.05);
+  }
+  .menu-toggle i {
+    display: none;
+  }
+
+  .menu-toggle::before,
+  .menu-toggle::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: 18px;
+    height: 2px;
+    background: var(--text);
+    transform: translateX(-50%);
+    transition: transform 0.25s ease, opacity 0.2s ease, top 0.25s ease;
+  }
+  .menu-toggle::before {
+    top: 14px;
+    box-shadow: 0 6px 0 var(--text);
+  }
+  .menu-toggle::after {
+    top: 26px;
+  }
+  .menu-toggle.active::before {
+    top: 50%;
+    box-shadow: none;
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  .menu-toggle.active::after {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+
+  .brand {
+    grid-column: 2;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    text-align: center;
+  }
+  .brand .logo {
+    width: 40px;
+    height: auto;
+  }
+  .brand-text h1 {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.1;
+  }
+  .brand-text .slogan {
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.2;
+    color: var(--muted);
+  }
+
+  .header-right {
+    grid-column: 3;
+    display: block;
+  }
+
+  #main-nav {
+    position: fixed;
+    top: 72px;
+    left: 0;
+    width: 100%;
+    background: rgba(18, 16, 28, 0.95);
+    max-height: 0;
+    opacity: 0;
+    pointer-events: none;
+    overflow: hidden;
+    flex-direction: column;
+    align-items: center;
+    transition: max-height 0.35s ease, opacity 0.25s ease;
+    z-index: 1000;
+  }
+  #main-nav.open {
+    max-height: 320px;
+    padding: 14px 0;
+    opacity: 1;
+    pointer-events: auto;
+  }
+  #main-nav ul {
+    flex-direction: column;
+    gap: 18px;
+    width: 100%;
+    align-items: center;
+    margin: 0;
+  }
+  #main-nav li {
+    width: 100%;
+  }
+  #main-nav a {
+    display: block;
+    width: 100%;
+    padding: 12px 0;
+    font-size: 1.08rem;
+    text-align: center;
+  }
+  #main-nav a::after {
+    display: none;
+  }
+}
+
+/* ====== HERO ====== */
+@media (max-width: 768px) {
+  #hero {
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+  }
+  .hero-content {
+    margin: 0;
+    max-width: 90%;
+  }
+  .hero-content h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+  .hero-content p {
+    font-size: 1rem;
+    text-align: center;
+  }
+  .hero-buttons {
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .btn-secondary,
+  .btn-primary {
+    padding: 10px 18px;
+    font-size: 0.95rem;
+  }
+}
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 1.6rem;
+  }
+  .hero-content p {
+    font-size: 0.9rem;
+  }
+  .btn-secondary,
+  .btn-primary {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* ====== CONTACTO ====== */
+@media (max-width: 900px) {
+  #contacto .contacto-wrap {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  #contacto .contacto-left img {
+    max-width: 520px;
+    margin: 0 auto;
+  }
+}
+
+/* ====== DESTACADOS ====== */
 @media (max-width: 900px) {
   .grid-destacados {
     grid-template-columns: 1fr;
@@ -749,5 +1126,55 @@ body {
   .destacados-laterales {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto;
+  }
+}
+@media (max-width: 768px) {
+  #main-nav ul {
+    flex-direction: column;
+    gap: 18px;
+    width: 100%;
+    text-align: center;
+  }
+  #main-nav li {
+    width: 100%;
+  }
+  #main-nav a {
+    display: block;
+    width: 100%;
+    padding: 12px 0;
+    font-size: 1.08rem;
+    text-align: center;
+  }
+}
+
+/* ====== DOTS ====== */
+@media (max-width: 768px) {
+  .nav-dots {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    background: rgba(18, 16, 28, 0.6);
+    padding: 6px 10px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    max-width: calc(100% - 20px);
+    overflow: hidden;
+  }
+  .nav-dots .dot {
+    width: 10px;
+    height: 10px;
+    flex-shrink: 0;
+  }
+  .nav-dots .dot.active {
+    transform: scale(1.3);
+  }
+}
+@media (max-width: 768px) {
+  .nav-dots {
+    display: none !important; /* 🚫 oculta los puntos en móvil */
   }
 }
