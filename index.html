@@ -34,33 +34,55 @@
           <li><a href="#inicio">Inicio</a></li>
           <li><a href="#destacados">Destacados</a></li>
           <li><a href="#telefonos">Teléfonos</a></li>
-          <li><a href="#contacto">Contactanos</a></li>
         </ul>
       </nav>
       <div class="header-right"></div>
     </header>
 
     <!-- Contenedor principal -->
-    <div class="container">
-      <!-- Inicio - Hero -->
-      <section class="slide" id="inicio">
-        <div id="hero">
-          <div class="hero-content">
-            <h1>Tu celular a crédito hoy mismo</h1>
-            <p>Sin trámites complicados. Aprobación rápida, pago en cuotas.</p>
-            <div class="hero-buttons">
-              <a
-                href="https://wa.me/573143471458"
-                target="_blank"
-                class="btn-secondary"
-                >Escríbenos</a
-              >
-            </div>
-          </div>
-        </div>
-      </section>
+<div class="container">
+  <!-- Inicio - Hero -->
+  <section class="slide" id="inicio">
+    <div id="hero">
+      <!-- Texto principal -->
+      <div class="hero-content">
+        <h1>Electrodomésticos y tecnología a tu alcance</h1>
+        <p>Compra fácil, paga en cuotas y recibe los mejores productos para tu hogar:
+    celulares, televisores, lavadoras, motos eléctricas y más.</p>
+      </div>
 
-      <!-- NUEVO SLIDE DESTACADOS -->
+      <!-- Contacto (parte del hero, mismo bloque) -->
+      <div class="contacto-box">
+        <h2>Conéctate con nosotros</h2>
+        <p class="contacto-copy">
+          Siempre listos para resolver tus dudas y ayudarte con tu crédito.
+        </p>
+        <div class="contacto-actions">
+          <a
+            class="btn-wp-xl"
+            href="https://wa.me/573143471458?text=Hola%2C%20quiero%20informaci%C3%B3n%20de%20cr%C3%A9dito"
+            target="_blank"
+            rel="noopener"
+          >
+            WhatsApp
+          </a>
+          <a
+            class="btn-mail"
+            href="mailto:ventas@ryk-tecnologia.com?subject=Solicitud%20de%20informaci%C3%B3n"
+          >
+            Correo
+          </a>
+        </div>
+        <div class="contacto-social">
+          <a class="social" href="https://facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a class="social" href="https://instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a class="social" href="https://tiktok.com/" target="_blank"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+      <!-- Destacados -->
       <section class="slide" id="destacados">
         <div class="destacados-wrap">
           <h2>Destacados</h2>
@@ -84,8 +106,18 @@
             </button>
           </div>
 
-          <!-- Carrusel de productos (se llena con JS) -->
-          <div class="carrusel-destacados" id="carrusel-contenido"></div>
+<!-- Carrusel de productos -->
+<div class="carrusel-destacados">
+  <button class="carrusel-btn prev hidden" id="carrusel-prev">❮</button>
+  
+  <div class="carrusel-window">
+    <div class="carrusel-inner" id="carrusel-contenido">
+      <!-- Aquí JS inyecta los productos -->
+    </div>
+  </div>
+
+  <button class="carrusel-btn next" id="carrusel-next">❯</button>
+</div>
         </div>
       </section>
 
@@ -141,72 +173,12 @@
           </div>
         </div>
       </section>
-
-      <!-- Contacto -->
-      <section class="slide" id="contacto">
-        <div class="contact-bg"></div>
-        <div class="contacto-wrap">
-          <div class="contacto-left">
-            <img src="img/poco_telefono.webp" alt="Smartphone destacado" />
-          </div>
-          <div class="contacto-right">
-            <h2>Conéctate con nosotros</h2>
-            <p class="contacto-copy">
-              Siempre listos para resolver tus dudas y ayudarte con tu crédito.
-            </p>
-            <div class="contacto-actions">
-              <a
-                class="btn-wp-xl"
-                href="https://wa.me/573143471458?text=Hola%2C%20quiero%20informaci%C3%B3n%20de%20cr%C3%A9dito"
-                target="_blank"
-                rel="noopener"
-              >
-                WhatsApp
-              </a>
-              <a
-                class="btn-mail"
-                href="mailto:ventas@ryk-tecnologia.com?subject=Solicitud%20de%20informaci%C3%B3n"
-              >
-                Correo
-              </a>
-            </div>
-            <div class="contacto-social">
-              <a
-                class="social"
-                href="https://facebook.com/"
-                target="_blank"
-                aria-label="Facebook"
-              >
-                <i class="fab fa-facebook-f"></i>
-              </a>
-              <a
-                class="social"
-                href="https://instagram.com/"
-                target="_blank"
-                aria-label="Instagram"
-              >
-                <i class="fab fa-instagram"></i>
-              </a>
-              <a
-                class="social"
-                href="https://tiktok.com/"
-                target="_blank"
-                aria-label="TikTok"
-              >
-                <i class="fab fa-tiktok"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
-
     <!-- INDICADORES (dots) -->
     <div class="nav-dots">
-      <span class="dot active" data-slide="0"></span>
-      <span class="dot" data-slide="1"></span>
-      <span class="dot" data-slide="2"></span>
-      <span class="dot" data-slide="3"></span>
+  <span class="dot active" data-slide="0"></span>
+  <span class="dot" data-slide="1"></span>
+  <span class="dot" data-slide="2"></span>
     </div>
 
     <script src="js/main.js"></script>
