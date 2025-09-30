@@ -1,29 +1,40 @@
 /* ================= THEME ================= */
 :root {
-  --bg: #1a0f33;         /* Fondo general del sitio (body completo) */
-  --surface: #24114d;    /* Fondos de secciones y paneles */
-  --card: rgba(255,255,255,0.06); /* Tarjetas de producto, cajas internas */
-  --border: rgba(255,255,255,0.12); /* Bordes sutiles de tarjetas y paneles */
+  --bg: #1a0f33; /* Fondo general del sitio (body completo) */
+  --surface: #24114d; /* Fondos de secciones y paneles */
+  --card: rgba(255, 255, 255, 0.06); /* Tarjetas de producto, cajas internas */
+  --border: rgba(
+    255,
+    255,
+    255,
+    0.12
+  ); /* Bordes sutiles de tarjetas y paneles */
 
-  --text: #ffffff;       /* Texto principal (headers, menús, botones) */
-  --muted: #d6d1eb;      /* Texto secundario (descripciones, párrafos) */
+  --text: #ffffff; /* Texto principal (headers, menús, botones) */
+  --muted: #d6d1eb; /* Texto secundario (descripciones, párrafos) */
 
   /* Colores principales de marca */
-  --primary: #ffda52;    /* Morado base → botones primarios, links destacados */
-  --primary-2: #e94bb4;  /* Fucsia de acompañamiento → degradados y resaltados */
+  --primary: #ffda52; /* Morado base → botones primarios, links destacados */
+  --primary-2: #e94bb4; /* Fucsia de acompañamiento → degradados y resaltados */
   --primary-hover: #00c2ff; /* Morado más oscuro → hover en botones, links, menú */
   --glow: 0 0 20px rgba(127, 30, 207, 0.45); /* Brillo/sombra en hover de botones */
 
   /* Colores de acento */
-  --accent: #ffda52;     /* Dorado → mantenerlo donde estaba (acento premium, detalles destacados) */
+  --accent: #ffda52; /* Dorado → mantenerlo donde estaba (acento premium, detalles destacados) */
   --accent-hover: #e0b93c; /* Dorado más oscuro → hover/acento activo */
 
   /* Colores de éxito (WhatsApp) */
---success: linear-gradient(135deg, #25d366, #128c7e); /* Verde degradado base */
---success-hover: linear-gradient(135deg, #1da851, #0f705f); /* Verde degradado más oscuro en hover */
-
+  --success: linear-gradient(
+    135deg,
+    #25d366,
+    #128c7e
+  ); /* Verde degradado base */
+  --success-hover: linear-gradient(
+    135deg,
+    #1da851,
+    #0f705f
+  ); /* Verde degradado más oscuro en hover */
 }
-
 
 /* BASE */
 html,
@@ -43,18 +54,17 @@ body {
     ),
     var(--bg);
   color: var(--text);
-  overflow: hidden;/* permitimos scroll normal */
+  overflow: hidden; /* permitimos scroll normal */
   height: 100%; /* importante en móviles */
   scroll-snap-type: y mandatory; /* fuerza el “salto” vertical */
   -webkit-overflow-scrolling: touch;
 }
 
-
 /* SLIDES */
 .container {
   width: 100%;
   display: flex;
-  flex-direction: column;      /* apila los slides en columna */
+  flex-direction: column; /* apila los slides en columna */
   transition: transform 0.8s ease-in-out, opacity 0.3s ease;
   opacity: 0;
   transform: translateY(30px);
@@ -68,7 +78,7 @@ body {
 .slide {
   height: 100vh;
   width: 100%;
-  flex-shrink: 0;              /* no se encoge, ocupa 100vh fijo */
+  flex-shrink: 0; /* no se encoge, ocupa 100vh fijo */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -169,14 +179,12 @@ body {
   flex: 1;
 }
 
-
-
 /* HERO */
 #hero {
   width: 100%;
   min-height: 100vh; /* ocupa toda la altura de la slide */
   position: relative;
-  display: flex;                 /* dos columnas: texto + contacto */
+  display: flex; /* dos columnas: texto + contacto */
   justify-content: space-between;
   align-items: center;
   padding: 0 5%;
@@ -330,8 +338,6 @@ body {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
 }
 
-
-
 /* ================= DESTACADOS ================= */
 #destacados {
   background: var(--surface);
@@ -436,12 +442,12 @@ body {
   border-radius: 12px;
   padding: 16px;
   text-align: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .carrusel-inner .product:hover {
   transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 8px 18px rgba(0,0,0,0.4), var(--glow);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4), var(--glow);
 }
 .carrusel-inner .product img {
   max-width: 100%;
@@ -485,7 +491,7 @@ body {
 
 /* Botones de control */
 .carrusel-btn {
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   border: none;
   color: #fff;
   font-size: 1.5rem;
@@ -496,7 +502,7 @@ body {
   z-index: 10;
 }
 .carrusel-btn:hover {
-  background: rgba(0,0,0,0.7);
+  background: rgba(0, 0, 0, 0.7);
 }
 .carrusel-btn.hidden {
   display: none;
@@ -725,18 +731,18 @@ body {
 
 /* ================== RESPONSIVE ================== */
 
-
 @media (max-width: 768px) {
-  html, body {
+  html,
+  body {
     height: 100%;
     overflow-y: scroll;
-    scroll-snap-type: y mandatory;  /* activa snap vertical */
+    scroll-snap-type: y mandatory; /* activa snap vertical */
     -webkit-overflow-scrolling: touch;
   }
 
   section {
-    min-height: 100vh;             /* cada sección ocupa toda la pantalla */
-    scroll-snap-align: start;      /* se alinea arriba al cambiar */
+    min-height: 100vh; /* cada sección ocupa toda la pantalla */
+    scroll-snap-align: start; /* se alinea arriba al cambiar */
   }
 }
 
@@ -744,24 +750,26 @@ body {
    SOPORTE GLOBAL DE SWIPE (MÓVILES)
    =============================== */
 
-  /* Snap vertical desde tablets hacia abajo */
+/* Snap vertical desde tablets hacia abajo */
 @media (max-width: 1280px) {
-  html, body {
+  html,
+  body {
     height: 100%;
     overflow-y: scroll;
-    scroll-snap-type: y mandatory;   /* activa snap vertical */
+    scroll-snap-type: y mandatory; /* activa snap vertical */
     -webkit-overflow-scrolling: touch;
   }
 
   section {
-    min-height: 100vh;              /* cada sección ocupa toda la pantalla */
-    scroll-snap-align: start;       /* se alinea arriba al cambiar */
+    min-height: 100vh; /* cada sección ocupa toda la pantalla */
+    scroll-snap-align: start; /* se alinea arriba al cambiar */
   }
 }
 
 @media (max-width: 768px) {
   /* Scroll vertical libre en toda la página */
-  html, body {
+  html,
+  body {
     touch-action: pan-y;
   }
 
@@ -773,9 +781,9 @@ body {
   [data-swipe="x"] {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    touch-action: pan-x;              /* habilita swipe lateral */
-    overscroll-behavior-x: contain;   /* evita arrastrar toda la página */
-    scroll-snap-type: x mandatory;    /* si ya usas snap */
+    touch-action: pan-x; /* habilita swipe lateral */
+    overscroll-behavior-x: contain; /* evita arrastrar toda la página */
+    scroll-snap-type: x mandatory; /* si ya usas snap */
     scroll-behavior: smooth;
   }
 
@@ -788,15 +796,12 @@ body {
   }
 }
 
-
-
 /* =================================================
    HEADER (CABECERA RESPONSIVE)
    - Menú hamburguesa con animación
    - Marca centrada
    - Menú desplegable móvil
    ================================================= */
-
 
 @media (max-width: 768px) {
   #main-header {
@@ -942,8 +947,6 @@ body {
   }
 }
 
-
-
 /* =================================================
    HERO (INICIO RESPONSIVE)
    - Centrado en móviles
@@ -958,33 +961,32 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;   /* nada de centrar vertical */
-    gap: 20px;                     /* aire entre texto y caja */
+    justify-content: flex-start; /* nada de centrar vertical */
+    gap: 20px; /* aire entre texto y caja */
     padding: 20px 14px;
-    min-height: auto;              /* no fuerza alto */
+    min-height: auto; /* no fuerza alto */
     height: auto !important;
   }
 
   .hero-content {
-  max-width: 92%;        /* ocupa casi todo el ancho en móvil */
-  margin: 0 auto;        /* centrado horizontal */
-  padding: 0;            /* evita padding fantasma */
-  animation: fadeInUp 0.6s ease; /* entrada ligera */
-}
+    max-width: 92%; /* ocupa casi todo el ancho en móvil */
+    margin: 0 auto; /* centrado horizontal */
+    padding: 0; /* evita padding fantasma */
+    animation: fadeInUp 0.6s ease; /* entrada ligera */
+  }
 
   .hero-content h1 {
-  font-size: clamp(1.6rem, 4.5vw, 2rem); /* escala dinámico según pantalla */
-  line-height: 1.3;      /* más aire */
-  margin-bottom: 12px;
-  word-wrap: break-word; /* evita corte de palabras largas */
-}
-
+    font-size: clamp(1.6rem, 4.5vw, 2rem); /* escala dinámico según pantalla */
+    line-height: 1.3; /* más aire */
+    margin-bottom: 12px;
+    word-wrap: break-word; /* evita corte de palabras largas */
+  }
 
   .hero-content p {
-  line-height: 1.4;
-  color: var(--muted);
-  margin-bottom: 14px;
-}
+    line-height: 1.4;
+    color: var(--muted);
+    margin-bottom: 14px;
+  }
 
   /* Botones principales */
   .hero-buttons {
@@ -1007,7 +1009,7 @@ body {
   .btn-primary:hover,
   .btn-secondary:hover {
     transform: translateY(-3px) scale(1.03);
-    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
   }
 
   /* Caja de contacto compacta */
@@ -1064,7 +1066,6 @@ body {
   .contact-box p {
     font-size: 0.85rem;
   }
-  
 }
 
 /* Animación de entrada hero */
@@ -1079,8 +1080,6 @@ body {
   }
 }
 
-
-
 /* =================================================
    DESTACADOS (RESPONSIVE) — sustituye el bloque actual
    ================================================= */
@@ -1094,43 +1093,68 @@ body {
     scroll-snap-type: x mandatory;
     scroll-padding: 0 16px;
   }
-  .carrusel-window::-webkit-scrollbar { display: none; }
+  .carrusel-window::-webkit-scrollbar {
+    display: none;
+  }
 
   /* Fila de tarjetas. Anula cualquier translate de JS en móvil */
   .carrusel-inner {
     display: flex;
     gap: 16px;
-    padding: 0 16px;                 /* deja aire a los lados */
-    transform: none !important;      /* clave: sin translateX en móvil */
+    padding: 0 16px; /* deja aire a los lados */
+    transform: none !important; /* clave: sin translateX en móvil */
   }
 
   /* Tarjeta ocupa ancho cómodo y centra con snap */
   .carrusel-inner .product {
     flex: 0 0 60%;
     scroll-snap-align: center;
-    transition: transform .3s ease, box-shadow .3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   /* “Resaltado Xbox” al quedar centrada */
   .carrusel-inner .product.active {
     transform: scale(1.05);
-    box-shadow: 0 8px 20px rgba(0,0,0,.4);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
     z-index: 2;
   }
 
   /* Título y menú */
-  #destacados h2 { font-size: 1.6rem; text-align: center; margin-bottom: 16px; }
-  .menu-scroll { overflow-x: auto; gap: 8px; -webkit-overflow-scrolling: touch; }
-  .menu-scroll::-webkit-scrollbar { display: none; }
-  .menu-item { font-size: .85rem; padding: 6px 12px; white-space: nowrap; }
+  #destacados h2 {
+    font-size: 1.6rem;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  .menu-scroll {
+    overflow-x: auto;
+    gap: 8px;
+    -webkit-overflow-scrolling: touch;
+  }
+  .menu-scroll::-webkit-scrollbar {
+    display: none;
+  }
+  .menu-item {
+    font-size: 0.85rem;
+    padding: 6px 12px;
+    white-space: nowrap;
+  }
 
   /* Oculta flechas en móvil, el gesto es por swipe */
-  .carrusel-btn { display: none !important; }
+  .carrusel-btn {
+    display: none !important;
+  }
 }
 
 @media (max-width: 480px) {
-  .carrusel-inner .product { flex: 0 0 92%; }
-  #destacados h2 { font-size: 1.4rem; }
-  .menu-item { font-size: .8rem; padding: 5px 10px; }
+  .carrusel-inner .product {
+    flex: 0 0 92%;
+  }
+  #destacados h2 {
+    font-size: 1.4rem;
+  }
+  .menu-item {
+    font-size: 0.8rem;
+    padding: 5px 10px;
+  }
 }
 
 /* =================================================
