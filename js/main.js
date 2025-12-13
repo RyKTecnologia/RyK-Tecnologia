@@ -63,17 +63,25 @@ document.addEventListener("DOMContentLoaded", () => {
   /* =================================================
      BOTÓN WHATSAPP (¡Lo quiero!)
      ================================================= */
+  document.addEventListener("DOMContentLoaded", () => {
   const btnWhatsapp = document.getElementById("btn-whatsapp");
-  if (btnWhatsapp) {
-    btnWhatsapp.addEventListener("click", (e) => {
-      e.preventDefault();
-      let modelo = document.getElementById("tel-nombre").textContent;
-      let numero = "573143471458";
-      let mensaje = `Hola, quiero el ${modelo}`;
-      let url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
-      window.open(url, "_blank");
-    });
-  }
+
+  if (!btnWhatsapp) return;
+
+  btnWhatsapp.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const modeloEl = document.getElementById("tel-nombre");
+    const modelo = modeloEl ? modeloEl.innerText.trim() : "producto";
+
+    const numero = "573171619217";
+    const mensaje = `Hola, quiero el ${modelo}`;
+    const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+
+    window.open(url, "_blank");
+  });
+});
+
 
   /* =================================================
      TELÉFONOS (lista vertical con video/banner dinámico)
@@ -193,22 +201,18 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  /* =================================================
-     DESTACADOS (carrusel horizontal)
-     ================================================= */
+  /* Destacados */
   const categorias = {
     lavadoras: {
       grande: {
         titulo: "Lavadora doble tina Kalley 10k",
         img: "img/lavadora10k.webp",
         desc: "Lavadora Kalley doble tina capacidad 10kg",
-        precio: "COP $...",
       },
       items: [
         {
           titulo: "Lavadora doble tina Kalley 7k",
           img: "img/lavadora7k.webp",
-          precio: "COP $...",
         },
       ],
     },
@@ -217,28 +221,23 @@ document.addEventListener("DOMContentLoaded", () => {
         titulo: "Tv 60 pulgadas Kalley",
         img: "img/tv60kalley.webp",
         desc: "Smart TV Kalley 60'' UHD",
-        precio: "COP $...",
       },
       items: [
         {
           titulo: "Tv 43 pulgadas Kalley",
           img: "img/tv43kalley.webp",
-          precio: "COP $...",
         },
         {
           titulo: "Tv 32 pulgadas Kalley",
           img: "img/tv32kalley.webp",
-          precio: "COP $...",
         },
         {
           titulo: "Tv 40 pulgadas Samsung",
           img: "img/tv40samsung.webp",
-          precio: "COP $...",
         },
         {
           titulo: "Tv 43 pulgadas Samsung",
           img: "img/tv43samsung.webp",
-          precio: "COP $...",
         },
       ],
     },
@@ -247,23 +246,19 @@ document.addEventListener("DOMContentLoaded", () => {
         titulo: "Parlante Samsung MX50",
         img: "img/parlante_mx50.webp",
         desc: "Audio potente Samsung MX50",
-        precio: "COP $...",
       },
       items: [
         {
           titulo: "Parlante 5PK 300D",
           img: "img/parlante_300d.webp",
-          precio: "COP $...",
         },
         {
           titulo: "Parlante Niatec Cubit (4 unidades)",
           img: "img/niatec_cubit.webp",
-          precio: "COP $...",
         },
         {
           titulo: "Parlante Niatec NT-PB16 (3 unidades)",
           img: "img/niatec_ntpb16.webp",
-          precio: "COP $...",
         },
       ],
     },
@@ -272,13 +267,11 @@ document.addEventListener("DOMContentLoaded", () => {
         titulo: "Freidora Kalley 6.3L",
         img: "img/freidora63.webp",
         desc: "Freidora de aire Kalley 6.3 litros",
-        precio: "COP $...",
       },
       items: [
         {
           titulo: "Freidora Kalley 4.5L",
           img: "img/freidora45.webp",
-          precio: "COP $...",
         },
       ],
     },
@@ -287,33 +280,27 @@ document.addEventListener("DOMContentLoaded", () => {
         titulo: "Mobuloo Girl 3",
         img: "img/moto_girl3.webp",
         desc: "Autonomía entre 40 y 50 km · Velocidad 25–35 km/h · Motor 350W · Carga máxima 130kg",
-        precio: "COP $4.200.000",
       },
       items: [
         {
           titulo: "Mobuloo Girl 3 - Blanca",
           img: "img/moto_girl3_blanca.webp",
-          precio: "COP $4.200.000",
         },
         {
           titulo: "Mobuloo Girl 3 - Negra",
           img: "img/moto_girl3_negra.webp",
-          precio: "COP $4.200.000",
         },
         {
           titulo: "Mobuloo Girl 3 - Verde",
           img: "img/moto_girl3_verde.webp",
-          precio: "COP $4.200.000",
         },
         {
           titulo: "Mobuloo Girl 3 - Rosa",
           img: "img/moto_girl3_rosa.webp",
-          precio: "COP $4.200.000",
         },
       ],
     },
   };
-
   // Preload imágenes destacados
   Object.values(categorias).forEach((cat) => {
     [cat.grande.img, ...cat.items.map((i) => i.img)].forEach((src) => {
@@ -348,8 +335,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <img src="${cat.grande.img}" alt="${cat.grande.titulo}">
           <h3>${cat.grande.titulo}</h3>
           <p>${cat.grande.desc}</p>
-          <p class="precio-ref">${cat.grande.precio}</p>
-          <a href="https://wa.me/573143471458?text=${encodeURIComponent(
+          <a href="https://wa.me/573171619217?text=${encodeURIComponent(
             "Hola, quiero comprar el " + cat.grande.titulo
           )}" target="_blank">¡Lo quiero!</a>
         </div>
@@ -359,8 +345,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="product">
             <img src="${i.img}" alt="${i.titulo}">
             <h4>${i.titulo}</h4>
-            <p class="precio-ref">${i.precio}</p>
-            <a href="https://wa.me/573143471458?text=${encodeURIComponent(
+            <a href="https://wa.me/573171619217?text=${encodeURIComponent(
               "Hola, quiero comprar el " + i.titulo
             )}" target="_blank">¡Lo quiero!</a>
           </div>

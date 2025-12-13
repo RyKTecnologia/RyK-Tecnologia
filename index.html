@@ -1,27 +1,37 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
   <head>
+    <!-- Metadatos básicos -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RyK Tecnología</title>
+
+    <!-- Tipografía -->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
       rel="stylesheet"
     />
 
+    <!-- Iconos -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+
+    <!-- Estilos principales -->
     <link rel="stylesheet" href="css/style.css" />
   </head>
+
   <body>
-    <!-- Header -->
+    <!-- Encabezado principal -->
     <header id="main-header">
+      <!-- Botón menú móvil -->
       <div id="menu-toggle" class="menu-toggle">
         <i class="fas fa-bars"></i>
       </div>
 
+      <!-- Marca y logotipo -->
       <div class="brand">
         <img src="img/logo1.webp" alt="Logo RyK" class="logo" />
         <div class="brand-text">
@@ -29,6 +39,8 @@
           <p class="slogan">Tu tecnología a crédito fácil y rápido</p>
         </div>
       </div>
+
+      <!-- Navegación principal -->
       <nav id="main-nav">
         <ul>
           <li><a href="#inicio">Inicio</a></li>
@@ -36,34 +48,37 @@
           <li><a href="#telefonos">Teléfonos</a></li>
         </ul>
       </nav>
+
+      <!-- Espacio reservado lado derecho -->
       <div class="header-right"></div>
     </header>
 
-    <!-- Contenedor principal -->
+    <!-- Contenedor general -->
     <div class="container">
-      <!-- Inicio - Hero -->
+      <!-- Sección inicio / hero -->
       <section class="slide" id="inicio">
         <div id="hero">
           <!-- Texto principal -->
           <div class="hero-content">
             <h1>Electrodomésticos y tecnología a tu alcance</h1>
             <p>
-              Compra fácil, paga en cuotas y recibe los mejores productos para
-              tu hogar: celulares, televisores, lavadoras, motos eléctricas y
-              más.
+              Compra fácil, paga en cuotas y recibe los mejores productos para tu
+              hogar: celulares, televisores, lavadoras, motos eléctricas y más.
             </p>
           </div>
 
-          <!-- Contacto (parte del hero, mismo bloque) -->
+          <!-- Bloque de contacto -->
           <div class="contacto-box">
             <h2>Conéctate con nosotros</h2>
             <p class="contacto-copy">
               Siempre listos para resolver tus dudas y ayudarte con tu crédito.
             </p>
+
+            <!-- Acciones de contacto -->
             <div class="contacto-actions">
               <a
                 class="btn-wp-xl"
-                href="https://wa.me/573143471458?text=Hola%2C%20quiero%20informaci%C3%B3n%20de%20cr%C3%A9dito"
+                href="https://wa.me/573171619217?text=Hola%2C%20quiero%20informaci%C3%B3n%20de%20cr%C3%A9dito"
                 target="_blank"
                 rel="noopener"
               >
@@ -76,54 +91,44 @@
                 Correo
               </a>
             </div>
+
+            <!-- Redes sociales -->
             <div class="contacto-social">
-              <a class="social" href="https://facebook.com/" target="_blank"
-                ><i class="fab fa-facebook-f"></i
-              ></a>
-              <a class="social" href="https://instagram.com/" target="_blank"
-                ><i class="fab fa-instagram"></i
-              ></a>
-              <a class="social" href="https://tiktok.com/" target="_blank"
-                ><i class="fab fa-tiktok"></i
-              ></a>
+              <a class="social" href="https://facebook.com/" target="_blank">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a class="social" href="https://instagram.com/" target="_blank">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a class="social" href="https://tiktok.com/" target="_blank">
+                <i class="fab fa-tiktok"></i>
+              </a>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Destacados -->
+      <!-- Sección destacados -->
       <section class="slide" id="destacados">
         <div class="destacados-wrap">
           <h2>Destacados</h2>
 
-          <!-- Menú horizontal -->
+          <!-- Menú de categorías -->
           <div class="menu-scroll">
-            <button class="menu-item active" data-categoria="lavadoras">
-              Lavadoras
-            </button>
-            <button class="menu-item" data-categoria="televisores">
-              Televisores
-            </button>
-            <button class="menu-item" data-categoria="parlantes">
-              Parlantes
-            </button>
-            <button class="menu-item" data-categoria="freidoras">
-              Freidoras
-            </button>
-            <button class="menu-item" data-categoria="motos">
-              Motos Eléctricas
-            </button>
+            <button class="menu-item active" data-categoria="lavadoras">Lavadoras</button>
+            <button class="menu-item" data-categoria="televisores">Televisores</button>
+            <button class="menu-item" data-categoria="parlantes">Parlantes</button>
+            <button class="menu-item" data-categoria="freidoras">Freidoras</button>
+            <button class="menu-item" data-categoria="motos">Motos Eléctricas</button>
           </div>
 
           <!-- Carrusel de productos -->
           <div class="carrusel-destacados">
-            <button class="carrusel-btn prev hidden" id="carrusel-prev">
-              ❮
-            </button>
+            <button class="carrusel-btn prev hidden" id="carrusel-prev">❮</button>
 
             <div class="carrusel-window">
               <div class="carrusel-inner" id="carrusel-contenido">
-                <!-- Aquí JS inyecta los productos -->
+                <!-- Contenido generado por JavaScript -->
               </div>
             </div>
 
@@ -132,52 +137,44 @@
         </div>
       </section>
 
-      <!-- Teléfonos -->
+      <!-- Sección teléfonos -->
       <section class="slide" id="telefonos">
         <div class="telefonos-container">
+          <!-- Información del teléfono -->
           <div class="info-box">
             <h2 id="tel-nombre">Honor</h2>
             <p id="tel-descripcion">
-              Descubre los últimos smartphones Honor con gran rendimiento y
-              estilo.
+              Descubre los últimos smartphones Honor con gran rendimiento y estilo.
             </p>
             <div class="video-box" id="tel-video"></div>
             <div class="acciones-telefono">
               <a href="#" id="btn-whatsapp" class="btn-wp">¡Lo quiero!</a>
             </div>
           </div>
+
+          <!-- Imagen o banner del teléfono -->
           <div class="telefono-banner" id="tel-banner"></div>
+
+          <!-- Menú de dispositivos -->
           <div class="device-menu">
             <div class="device-nav top">
               <button id="btn-up">▲</button>
             </div>
+
             <div class="device-window">
               <ul id="tel-lista" class="device-list">
                 <li data-modelo="honor" class="device-item active">Honor</li>
-                <li data-modelo="infinixHot50" class="device-item">
-                  Infinix Hot 50 5G
-                </li>
-                <li data-modelo="infinixNote50" class="device-item">
-                  Infinix Note 50 Pro
-                </li>
-                <li data-modelo="iphone14pro" class="device-item">
-                  iPhone 14 Pro
-                </li>
-                <li data-modelo="motorolaG40" class="device-item">
-                  Motorola G40
-                </li>
+                <li data-modelo="infinixHot50" class="device-item">Infinix Hot 50 5G</li>
+                <li data-modelo="infinixNote50" class="device-item">Infinix Note 50 Pro</li>
+                <li data-modelo="iphone14pro" class="device-item">iPhone 14 Pro</li>
+                <li data-modelo="motorolaG40" class="device-item">Motorola G40</li>
                 <li data-modelo="oppo" class="device-item">Oppo</li>
-                <li data-modelo="samsungA16" class="device-item">
-                  Samsung A16
-                </li>
-                <li data-modelo="xiaomiNote14" class="device-item">
-                  Xiaomi Note 14 Pro
-                </li>
-                <li data-modelo="tecnoSpark" class="device-item">
-                  Tecno Spark Go2
-                </li>
+                <li data-modelo="samsungA16" class="device-item">Samsung A16</li>
+                <li data-modelo="xiaomiNote14" class="device-item">Xiaomi Note 14 Pro</li>
+                <li data-modelo="tecnoSpark" class="device-item">Tecno Spark Go2</li>
               </ul>
             </div>
+
             <div class="device-nav bottom">
               <button id="btn-down">▼</button>
             </div>
@@ -185,13 +182,16 @@
         </div>
       </section>
     </div>
-    <!-- INDICADORES (dots) -->
+
+    <!-- Indicadores de navegación -->
     <div class="nav-dots">
       <span class="dot active" data-slide="0"></span>
       <span class="dot" data-slide="1"></span>
       <span class="dot" data-slide="2"></span>
     </div>
 
+    <!-- Scripts -->
     <script src="js/main.js"></script>
   </body>
 </html>
+```
